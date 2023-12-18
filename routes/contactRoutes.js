@@ -7,7 +7,7 @@ const {
     updateContact, 
     deleteContact,
 } = require("../controllers/contactController");
-
+router.use(validateToken);
 router.route("/").get(getContacts).post(createContact);
 router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);
 
